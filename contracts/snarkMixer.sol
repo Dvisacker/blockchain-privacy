@@ -92,7 +92,7 @@ contract Mixer is Verifier {
     ) returns (bool) {
         uint[16] memory leaves = getLeaves();
         // Verify that we provide a proof for an element in the array
-        bool find = isElementOfArray(input[1], leaves);
+        bool find = isElementOfArray(input[0], leaves);
         if (roots[rootTree] == true && find) {
             if (!verifyTx(a, a_p, b, b_p, c, c_p, h, k, input)) {
                 return false;
